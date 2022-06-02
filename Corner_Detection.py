@@ -5,7 +5,6 @@
 
 import numpy as np
 import cv2
-import glob
 
 
 # Kernel operation using input operator of size 3*3
@@ -57,8 +56,8 @@ def HarrisCornerDetection(image):
                 # ImgX[ind1][ind2] = 0
 
     # # Display the output results after Sobel operations
-    # cv2.imshow("SobelX", ImgX)
-    # cv2.imshow("SobelY", ImgY)
+    #cv2.imshow("SobelX", ImgX)
+    #cv2.imshow("SobelY", ImgY)
 
     ImgX_2 = np.square(ImgX)
     ImgY_2 = np.square(ImgY)
@@ -74,7 +73,7 @@ def HarrisCornerDetection(image):
     ImgY_2 = cv2.GaussianBlur(ImgY_2, kernelsize, Sigma)
     ImgXY = cv2.GaussianBlur(ImgXY, kernelsize, Sigma)
     ImgYX = cv2.GaussianBlur(ImgYX, kernelsize, Sigma)
-    # print(ImgXY.shape, ImgYX.shape)
+    #print(ImgXY.shape, ImgYX.shape)
 
     alpha = 0.06
     R = np.zeros((w, h), np.float32)
@@ -87,7 +86,7 @@ def HarrisCornerDetection(image):
 
 
 #### Main Program ####
-firstimagename = cv2.imread("YourFileName.png")
+firstimagename = "YourFilePath/YourImageName.jpg"
 
 # Get the first image
 firstimage = cv2.imread(firstimagename, cv2.IMREAD_GRAYSCALE)
